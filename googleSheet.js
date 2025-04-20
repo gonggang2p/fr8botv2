@@ -11,9 +11,10 @@ const SHEET_NAME = process.env.SHEET_NAME || 'Sheet1';
 const TIMEZONE = 'Asia/Bangkok';
 
 const auth = new GoogleAuth({
-  keyFile: '/etc/secrets/credentials.json'
-  scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+  keyFile: '/etc/secrets/credentials.json',
+  scopes: ['https://www.googleapis.com/auth/spreadsheets']
 });
+
 
 async function appendUserToSheet(userId) {
   const client = await auth.getClient();
